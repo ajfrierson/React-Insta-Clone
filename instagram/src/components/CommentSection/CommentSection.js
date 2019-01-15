@@ -14,8 +14,8 @@ class CommentSection extends Component {
             {this.state.comments.map(comments => {
                 return (
                         <div className="blockquote">
-                            <span className="font-weight-bold mein-text mb-0 pl-5" key={comments.text}> 
-                                {comments.username}</span><span className="mein-text pl-5">{comments.text}</span>
+                            <span className="font-weight-bold main-text mb-0 pl-5" key={comments.text}> 
+                                {comments.username}</span><span className="main-text pl-5">{comments.text}</span>
                         </div>
                           
                     )})}
