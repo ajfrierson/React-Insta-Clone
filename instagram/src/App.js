@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import PostContainer from './components/PostContainer/PostContainer.js'
+import SearchBar from './components/SearchBar/SearchBar.js'
+import dummyData from './dummy-data';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      friends: []
+    }
+  }
+  componentDidMount () {
+    this.setState({ friends: dummyData });
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+   
+      <div className="PostContainer">   
+        <SearchBar />
+        {this.state.friends.map(friend => {
+          return <PostContainer key={friend.username} friends={friend} />
+        })}      
+        
       </div>
+
     );
   }
 }
