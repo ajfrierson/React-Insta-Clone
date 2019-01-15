@@ -1,0 +1,30 @@
+.card-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .test-2 {
+    width: 500px;
+  }
+  
+  .like-button {
+    font-size: 24px;
+    display: inline-block;
+  }
+  
+  .like-selected {
+    color: red;
+  }
+  
+  .post-buttons {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px
+  }
+  
+  .login-form {
+    width: 200px;
+    margin: auto;
+    margin-top: 10%;
+  }

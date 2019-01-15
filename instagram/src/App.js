@@ -1,30 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-import PostContainer from './components/PostContainer/PostContainer.js'
-import SearchBar from './components/SearchBar/SearchBar.js'
-import dummyData from './dummy-data';
+import PostsPage from './components/PostContainer/PostsPage';
+
 
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      friends: []
-    }
+    this.state = {}
   }
-  componentDidMount () {
-    this.setState({ friends: dummyData });
-  }
+
   render() {
     return (
-   
-      <div className="PostContainer">   
-        <SearchBar />
-        {this.state.friends.map(friend => {
-          return <PostContainer key={friend.username} friends={friend} />
-        })}      
-        
+      <div className="App">
+        <PostsPage />
       </div>
-
     );
   }
 }
