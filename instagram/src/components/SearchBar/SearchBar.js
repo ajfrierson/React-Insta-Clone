@@ -1,21 +1,62 @@
-import React, { Component } from 'react'
-import { NavItem, FormGroup, Input } from 'reactstrap'
-import './SearchBar.css'
+import React from 'react';
+import '../instagram.css';
+import styled from 'styled-components';
 
-const SearchBar = props => {
-   return (   
-        <div className="row">
-           <nav className="navbar navbar-light bg-light row justify-content-start main-navbar">
-                    <img className="col-1" src="https://image.freepik.com/free-icon/instagram-logo_318-84939.jpg" alt="Camera"></img>
-                    <img className="col-2 border-left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcBUKxm-jPyGj0Hr0Z1J7kHkjc3WMAwUZ68qPY81ij1rY9v6Gl" alt="Instagram logo"></img>
-                        <FormGroup>
-                            <Input className="col-3" type="search" name="search" id="SearchBar for instagram" placeholder="Search" className="main-search-field"/>
-                        </FormGroup>  
-                    </nav>
-                        <i className="far fa-compass main-icons"></i>
-                        <i className="far fa-heart main-icons"></i>
-                        <i className="far fa-user main-icons"></i>
-                        </div>
-   )
+const StyledHeader = styled.div`
+font-size: 24px;
+border: 10px;
+border-bottom: 1px solid grey;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 25px;
+padding-bottom: 25px;
+`;
+
+const StyledLogo = styled.div`
+max-width: 300px;
+max-height: 150px;
+`;
+
+const StyledLogoImage = styled.img`
+max-width: 200px;
+max-height: 100px;
+margin-left: 10px;
+`;
+
+const StyledSearch = styled.div`
+display: flex;
+align-items: center;
+`;
+
+const StyledSearchIcon = styled.i`
+`;
+
+
+const SearchBar = (props) => {
+
+  return (
+    <div>
+    {
+      <StyledHeader>
+        <StyledLogo>
+          <i className="fab fa-instagram" style={{fontSize: 50 + "px", marginTop: 50 + "px"}}></i>
+          <StyledLogoImage src="https://github.com/LambdaSchool/React-Insta-Clone/blob/day-4-solution/instagram/src/assets/iglogo.png?raw=true"
+        alt="" />
+        </StyledLogo>
+        <StyledSearch>
+          <StyledSearchIcon className="fas fa-search"/>
+          <form onSubmit={props.searchHandler}>
+          <input type="search" name="searchTerm" placeholder="Search" onChange={props.changeHandler} />
+          </form>
+        </StyledSearch>
+        <button onClick={props.handleLogout}>Log Out</button>
+      </StyledHeader>
+      }
+    </div>
+  )
 }
-export default SearchBar
+
+export default SearchBar;
